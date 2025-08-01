@@ -1,19 +1,11 @@
+// src/modules/stock.module.ts
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { OrdersService } from './orders.service';
-import { OrdersController } from './orders.controller';
-import { Order } from '../models/order.entity';
-import { OrderItem } from '../models/order-item.entity';
-import { ProductsModule } from '../products/products.module';
-import { UsersModule } from '../users/users.module';
+import { StockService } from '../services/stock.service';
+import { ProductsModule } from '../modules/products.module';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([Order, OrderItem]),
-    UsersModule,
-    ProductsModule,
-  ],
-  providers: [OrdersService],
-  controllers: [OrdersController],
+  imports: [ProductsModule],
+  providers: [StockService],
+  exports: [StockService],
 })
-export class OrdersModule {}
+export class StockModule {}

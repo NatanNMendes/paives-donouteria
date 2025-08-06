@@ -1,5 +1,5 @@
-// src/modules/stock.module.ts
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { StockService } from '../services/stock.service';
 import { ProductsModule } from '../modules/products.module';
 

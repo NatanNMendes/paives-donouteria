@@ -4,7 +4,9 @@ import { User } from '../models/user.entity';
 
 @Injectable()
 export class StockService {
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private readonly productsService: ProductsService 
+  ) {}
 
   async adjust(productId: number, delta: number, user: User) {
     if (user.type !== 'empresarial') throw new ForbiddenException();

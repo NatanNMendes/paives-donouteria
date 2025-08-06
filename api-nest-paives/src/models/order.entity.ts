@@ -21,7 +21,11 @@ export class Order {
   @OneToMany(() => OrderItem, (item) => item.order, { cascade: true })
   items: OrderItem[];
 
-  @Column({ type: 'enum', enum: OrderStatus, default: OrderStatus.AWAITING_PAYMENT })
+  @Column({
+    type: 'varchar',
+    length: 20,
+    default: OrderStatus.AWAITING_PAYMENT,
+  })
   status: OrderStatus;
 
   @CreateDateColumn()

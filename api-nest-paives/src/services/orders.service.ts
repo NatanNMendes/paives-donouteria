@@ -2,8 +2,8 @@ import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/commo
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Order } from '../models/order.entity';
-import { OrderItem } from '../models/order-item.entity';
-import { CreateOrderDto } from '../dtos/create-order.dto';
+import { OrderItem } from '../models/order_item.entity';
+import { CreateOrderDto } from '../dtos/create_order.dto';
 import { User } from '../models/user.entity';
 import { ProductsService } from '../services/products.service';
 import { StockService } from '../services/stock.service';

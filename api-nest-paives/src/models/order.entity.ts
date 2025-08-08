@@ -7,7 +7,7 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 import { User } from './user.entity';
-import { OrderItem } from './order-item.entity';
+import { OrderItem } from './order_item.entity';
 import { OrderStatus } from '../utils/order-status.enum';
 
 @Entity('orders')

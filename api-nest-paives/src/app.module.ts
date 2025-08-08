@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/users.module';
 import { AuthModule } from './modules/auth.module';
 import { ProductsModule } from './modules/products.module';
+import { CartModule } from './modules/cart.module';
 import { OrdersModule } from './modules/orders.module';
 import { StockModule } from './modules/stock.module';
 
@@ -17,6 +18,7 @@ import { StockModule } from './modules/stock.module';
     UsersModule,
     AuthModule,
     ProductsModule,
+    CartModule,
     OrdersModule,
     StockModule,
   ],

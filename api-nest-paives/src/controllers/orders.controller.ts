@@ -1,7 +1,7 @@
 import { Controller, Post, Get, Param, UseGuards, Body } from '@nestjs/common';
 import { OrdersService } from '../services/orders.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
-import { CreateOrderDto } from '../dtos/create-order.dto';
+import { CreateOrderDto } from '../dtos/create_order.dto';
 import { GetUser } from '../auth/get-user.decorator';
 import { User } from '../models/user.entity';
 

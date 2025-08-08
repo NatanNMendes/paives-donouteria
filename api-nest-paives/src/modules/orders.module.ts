@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Order } from '../models/order.entity';
-import { OrderItem } from '../models/order-item.entity';
+import { OrderItem } from '../models/order_item.entity';
 import { OrdersService } from '../services/orders.service';
 import { OrdersController } from '../controllers/orders.controller';
 import { ProductsModule } from './products.module';

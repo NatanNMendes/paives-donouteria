@@ -1,4 +1,5 @@
-import { IsEmail, IsNotEmpty, MinLength, IsEnum } from 'class-validator';
+import { IsEmail, IsNotEmpty, MinLength, IsEnum, IsString, Matches} from 'class-validator';
+
 import { Transform } from 'class-transformer';
 
 export enum UserType {
@@ -7,6 +8,19 @@ export enum UserType {
 }
 
 export class CreateUserDto {
+  
+  @IsString()
+  @IsNotEmpty()
+  name: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }) => value.replace(/\D/g, ''))
+  @Matches(/^\d{11,14}$/, {
+    message: 'vat deve conter apenas números com 11 ou 14 dígitos'
+  })
+  vat: string;
+
   @IsEmail()
   @IsNotEmpty()
   @Transform(({ value }) => value.toLowerCase().trim())
